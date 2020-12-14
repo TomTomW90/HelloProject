@@ -46,3 +46,23 @@ my_register.add_product(DiscountProduct('tv', 2000.00, 0.10))
 my_register.add_product(DiscountProduct('dvd', 1000.00, 0.10))
 
 print(my_register.sum())
+
+##HOMEWORK###
+
+def censor(text, blacklist=()):
+    text_censored = []
+    items_to_be_striped = '!?@#%\''
+    for word in text.split():
+        original_word = word
+        if word.lower().strip(items_to_be_striped) in blacklist:
+            text_censored.append('*' * len(word.strip(items_to_be_striped)))
+        else:
+            text_censored.append(word)
+    return ' '.join(text_censored)
+
+blk_list = ['damn', 'fool', 'motherfucker']
+text = "You're a damn fool\nYippee-ki-yay Motherfucker!"
+print(text)
+print(censor(text, blk_list))
+
+#######
